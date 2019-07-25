@@ -4,6 +4,7 @@ from twisted.python.failure import Failure
 from zope.interface import Attribute, Interface
 
 
+# PY3KPORT 
 # delimiter characters.
 LIST     = int2byte(0x80) # old
 INT      = int2byte(0x81)
@@ -16,6 +17,7 @@ LONGNEG  = int2byte(0x86) # old
 # really optional; this is is part of the 'pb' vocabulary
 VOCAB    = int2byte(0x87)
 
+# PY3KPORT
 # newbanana tokens
 OPEN     = int2byte(0x88)
 CLOSE    = int2byte(0x89)
@@ -91,6 +93,7 @@ class RemoteException(Exception):
     exception is raised in response to any remote exception. It wraps a
     CopiedFailure, which can be examined by callers who want to know more
     than the fact that something failed on the remote end."""
+
     def __init__(self, failure):
         self.failure = failure
     def __str__(self):

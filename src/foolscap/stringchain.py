@@ -141,8 +141,6 @@ class StringChain(object):
 
         #assert self._assert_invariants()
 
-        return resstr
-
     def __len__(self):
         #assert self._assert_invariants()
         return self.len
